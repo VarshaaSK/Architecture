@@ -4,10 +4,24 @@ public class Centimeter {
 
     private final double magnitude;
 
+
     public Centimeter(double magnitude){
         this.magnitude = magnitude;
     }
 
+    public static Centimeter methodForConversionToCm(double magnitude) {
+        return new Centimeter(magnitude*100);
+    }
+
+    public static Centimeter methodForConversionToKm(double magnitude){
+        return new Centimeter(magnitude / 100000);
+    }
+
+    public static Centimeter methodForConversionToKmTrueCase(double magnitude){
+        return new Centimeter(magnitude / 100000);
+    }
+
+    @Override
     public boolean equals(Object object){
         if(this == object){
             return true;
@@ -19,10 +33,5 @@ public class Centimeter {
         return magnitude == that.magnitude;
     }
 
-//    public String checkForValue(String unit1, String unit2) {
-//        if(unit1.equals(unit2)){
-//            return "Both Are Same";
-//        }
-//        return "Both are different";
-//    }
+
 }
