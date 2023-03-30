@@ -9,19 +9,22 @@ import static org.hamcrest.CoreMatchers.is;
 
 
 public class ArchitectureTest {
-    Architecture architecture = new Architecture();
+
 
     @Test
     void toCheckIfBothUnitsAreSame(){
 
-        //Arrange
-        String expectedValue = "Both Are Same";
+        Centimeter oneCentimeter = new Centimeter(1);
+        Centimeter anotherCentimeter = new Centimeter(1);
 
-        //Act
-        String actualValue = architecture.checkForValue("1 cm" , "1 cm");
+        //Arrange
+//        String expectedValue = "Both Are Same";
+//
+//        //Act
+//        String actualValue = architecture.checkForValue("1 cm" , "1 cm");
 
         //Assert
 //        assertEquals(expectedValue, actualValue);
-        assertThat(actualValue , is(equalTo(expectedValue)));
+        assertThat(oneCentimeter , is(equalTo(anotherCentimeter)));
     }
 }
