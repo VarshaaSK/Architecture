@@ -43,16 +43,14 @@ public class Length {
             return false;
         }
         Length that = (Length) object;
-        return convertToBaseNumber() == that.convertToBaseNumber();
+        return convertToUnit(Unit.m) == that.convertToUnit(Unit.m);
     }
 
-    private double convertToBaseNumber(){
-        return (magnitude * unit.baseFactor);
+    private double convertToUnit(Unit toUnit){
+        return magnitude * (unit.baseFactor/toUnit.baseFactor);
     }
 
     public Length add(Length secondParameter) {
-        return new Length(magnitude + secondParameter.convertToBaseNumber(),unit);
+        return new Length(magnitude + secondParameter.convertToUnit(unit),unit);
     }
-
-
 }

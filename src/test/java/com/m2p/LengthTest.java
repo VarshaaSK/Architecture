@@ -57,6 +57,15 @@ public class LengthTest {
         assertThat(firstParameter.add(secondParameter) , is(equalTo(result)));
     }
 
+    @Test
+    void toCheckAdditionOfNumberFromCmToKm(){
+        Length firstParameter = cm(200);
+        Length secondParameter = km(1);
+
+        Length result = cm(100200);
+
+        assertThat(firstParameter.add(secondParameter) ,is(equalTo(result)));
+    }
 
 
 }
