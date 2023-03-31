@@ -2,6 +2,7 @@ package com.m2p;
 
 public class Length {
 
+
     private static class Unit{
         static final Unit cm = new Unit(0.01);
         static final Unit m = new Unit(1);
@@ -33,7 +34,6 @@ public class Length {
     }
 
 
-
     @Override
     public boolean equals(Object object){
         if(this == object){
@@ -48,6 +48,10 @@ public class Length {
 
     private double convertToBaseNumber(){
         return (magnitude * unit.baseFactor);
+    }
+
+    public Length add(Length secondParameter) {
+        return new Length(magnitude + secondParameter.convertToBaseNumber(),unit);
     }
 
 

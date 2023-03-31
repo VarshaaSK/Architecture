@@ -47,4 +47,16 @@ public class LengthTest {
         assertThat(inKm, is(equalTo(inCm)));
     }
 
+    @Test
+    void toCheckTheSumAfterConversion(){
+        Length firstParameter = meter(1);
+        Length secondParameter = cm(100);
+
+        Length result = meter(2);
+
+        assertThat(firstParameter.add(secondParameter) , is(equalTo(result)));
+    }
+
+
+
 }
