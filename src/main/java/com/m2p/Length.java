@@ -7,7 +7,8 @@ public class Length {
         static final Unit cm = new Unit(0.01);
         static final Unit m = new Unit(1);
         static final Unit km = new Unit(1000);
-
+        static final Unit g = new Unit(0.001);
+        static final Unit kg = new Unit(1);
         private double baseFactor;
         private Unit(double baseFactor){
             this.baseFactor = baseFactor;
@@ -27,6 +28,13 @@ public class Length {
 
     public static Length km(double magnitude){
         return new Length(magnitude , Unit.km);
+    }
+
+    public static Length g(double magnitude){
+        return new Length(magnitude , Unit.g);
+    }
+    public static Length kg(double magnitude){
+        return new Length(magnitude, Unit.kg);
     }
 
     public Length(double magnitude, Unit unit){

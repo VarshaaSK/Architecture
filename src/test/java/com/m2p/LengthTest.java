@@ -87,4 +87,41 @@ public class LengthTest {
         assertThat(firstParameter.subtract(secondParameter), is(equalTo(result)));
     }
 
+    @Test
+    void toCheckIfOneGIsEqualToOneGram(){
+        Length oneGram = g(1);
+        Length anotherOneGram = g(1);
+
+        assertThat(oneGram , is(equalTo(anotherOneGram)));
+    }
+
+    @Test
+    void toCheckPointOneKgIsSameAsOneHundredG(){
+        Length pointOneKg = kg(0.1);
+        Length hundredG = g(100);
+
+        assertThat(pointOneKg , is(equalTo(hundredG)));
+    }
+
+    @Test
+    void toCheckAdditionBetweenGAndKg(){
+        Length firstParameter = g(10);
+        Length secondParameter = kg(1);
+
+        Length result = g(1010);
+
+        assertThat(firstParameter.add(secondParameter) , is(equalTo(result)));
+
+    }
+
+    @Test
+    void toCheckSubtractingGFromKg(){
+        Length kg = kg(1.5);
+        Length g = g(500);
+
+        Length result = kg(1);
+
+        assertThat(kg.subtract(g), is(equalTo(result)));
+    }
+
 }
