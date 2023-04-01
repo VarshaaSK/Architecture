@@ -67,5 +67,24 @@ public class LengthTest {
         assertThat(firstParameter.add(secondParameter) ,is(equalTo(result)));
     }
 
+    @Test
+    void toCheckSubtractingTwoUnitsMMinusCm(){
+        Length firstParameter = meter(1);
+        Length secondParameter = cm(50);
+
+        Length result = meter(0.5);
+
+        assertThat(firstParameter.subtract(secondParameter), is(equalTo(result)));
+    }
+
+    @Test
+    void toCheckSubtractingTwoUnitsCmMinusM(){
+        Length firstParameter = cm(2000);
+        Length secondParameter = meter(1);
+
+        Length result = cm(1900);
+
+        assertThat(firstParameter.subtract(secondParameter), is(equalTo(result)));
+    }
 
 }

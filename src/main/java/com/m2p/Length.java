@@ -7,6 +7,7 @@ public class Length {
         static final Unit cm = new Unit(0.01);
         static final Unit m = new Unit(1);
         static final Unit km = new Unit(1000);
+
         private double baseFactor;
         private Unit(double baseFactor){
             this.baseFactor = baseFactor;
@@ -52,5 +53,9 @@ public class Length {
 
     public Length add(Length secondParameter) {
         return new Length(magnitude + secondParameter.convertToUnit(unit),unit);
+    }
+
+    public Length subtract(Length secondParameter){
+        return new Length(magnitude - secondParameter.convertToUnit(unit),unit);
     }
 }
